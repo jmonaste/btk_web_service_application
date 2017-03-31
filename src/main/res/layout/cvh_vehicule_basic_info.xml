@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="3dp"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:orientation="vertical"
+    card_view:cardCornerRadius="2dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraint_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:orientation="horizontal"
+        android:padding="@dimen/padding"
+        android:transitionName="layout_transition">
+
+        <TextView
+            android:id="@+id/tv_vcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            card_view:layout_constraintTop_toTopOf="@+id/constraint_layout"
+            card_view:layout_constraintLeft_toLeftOf="@+id/constraint_layout"
+            android:text="001"
+            android:textSize="28dp" />
+
+        <TextView
+            android:id="@+id/tv_vname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            card_view:layout_constraintLeft_toRightOf="@+id/tv_vcode"
+            card_view:layout_constraintTop_toTopOf="@+id/tv_vcode"
+            android:layout_marginLeft="@dimen/text_view_horizontal_padding"
+            android:layout_marginTop="@dimen/text_view_vertical_padding"
+            android:text="Vehicule Name"
+            android:textSize="16dp"/>
+
+        <TextView
+            android:id="@+id/tv_vregname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            card_view:layout_constraintLeft_toRightOf="@+id/tv_vcode"
+            card_view:layout_constraintTop_toBottomOf="@+id/tv_vname"
+            android:layout_marginLeft="@dimen/text_view_horizontal_padding"
+            android:layout_marginTop="@dimen/text_view_vertical_padding"
+            android:text="Vehicule Registration Number"
+            android:textSize="12dp"/>
+
+        <TextView
+            android:id="@+id/tv_vtype"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            card_view:layout_constraintLeft_toRightOf="@+id/tv_vcode"
+            card_view:layout_constraintTop_toBottomOf="@+id/tv_vregname"
+            android:layout_marginLeft="@dimen/text_view_horizontal_padding"
+            android:layout_marginTop="@dimen/text_view_vertical_padding"
+            android:text="Vehicule type"
+            android:textSize="12dp" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>

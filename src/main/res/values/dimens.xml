@@ -1,0 +1,16 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="padding">16dp</dimen>
+    <dimen name="text_size">20sp</dimen>
+    <dimen name="initial_size">24sp</dimen>
+
+    <dimen name="text_view_horizontal_padding">4dp</dimen>
+    <dimen name="text_view_vertical_padding">0dp</dimen>
+
+    <!-- Card View Holder Vehicule Complete Info-->
+    <dimen name="textsize_content_description">8sp</dimen>
+    <dimen name="textsize_content">16sp</dimen>
+
+</resources>
