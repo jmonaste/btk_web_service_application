@@ -34,6 +34,8 @@
             android:id="@+id/tv_vname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingTop="3dp"
+            android:paddingBottom="15dp"
             card_view:layout_constraintLeft_toRightOf="@+id/tv_vcode"
             card_view:layout_constraintTop_toTopOf="@+id/tv_vcode"
             android:layout_marginLeft="@dimen/text_view_horizontal_padding"
@@ -50,7 +52,7 @@
             card_view:layout_constraintTop_toBottomOf="@+id/tv_vname"
             android:layout_marginLeft="@dimen/text_view_horizontal_padding"
             android:layout_marginTop="@dimen/text_view_vertical_padding"
-            android:text="Vehicule Registration Name:"
+            android:text="Registration Name:"
             android:textSize="@dimen/textsize_content_description"
             android:layout_marginStart="@dimen/text_view_horizontal_padding" />
 
@@ -70,9 +72,9 @@
             android:id="@+id/tv_vregname_content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            card_view:layout_constraintLeft_toRightOf="@+id/tv_vname"
+            card_view:layout_constraintLeft_toRightOf="@+id/tv_vregname"
             card_view:layout_constraintTop_toTopOf="@+id/tv_vregname"
-            android:layout_marginLeft="@dimen/text_view_horizontal_padding"
+            android:layout_marginLeft="8dp"
             android:layout_marginTop="@dimen/text_view_vertical_padding"
             android:text="TXD - 1324568"
             android:textSize="@dimen/textsize_content_description" />
@@ -81,9 +83,9 @@
             android:id="@+id/tv_vtype_content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            card_view:layout_constraintLeft_toRightOf="@+id/tv_vname"
+            card_view:layout_constraintLeft_toRightOf="@+id/tv_vtype"
             card_view:layout_constraintTop_toTopOf="@+id/tv_vtype"
-            android:layout_marginLeft="@dimen/text_view_horizontal_padding"
+            android:layout_marginLeft="8dp"
             android:layout_marginTop="@dimen/text_view_vertical_padding"
             android:text="Mini Bus"
             android:textSize="@dimen/textsize_content_description" />
@@ -104,11 +106,57 @@
             android:id="@+id/tv_vname_2_content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            card_view:layout_constraintLeft_toRightOf="@+id/tv_vname"
+            card_view:layout_constraintLeft_toRightOf="@+id/tv_vname_2"
             card_view:layout_constraintTop_toTopOf="@+id/tv_vname_2"
-            android:layout_marginLeft="@dimen/text_view_horizontal_padding"
+            android:layout_marginLeft="8dp"
             android:layout_marginTop="@dimen/text_view_vertical_padding"
             android:text="Volvo TXD model 21"
+            android:textSize="@dimen/textsize_content_description" />
+
+        <TextView
+            android:id="@+id/tv_vcode_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            card_view:layout_constraintLeft_toRightOf="@+id/tv_vcode"
+            card_view:layout_constraintTop_toBottomOf="@+id/tv_vname_2"
+            android:layout_marginLeft="@dimen/text_view_horizontal_padding"
+            android:layout_marginTop="@dimen/text_view_vertical_padding"
+            android:text="Vehicule code:"
+            android:textSize="@dimen/textsize_content_description"
+            android:layout_marginStart="@dimen/text_view_horizontal_padding" />
+
+        <TextView
+            android:id="@+id/tv_vcode_2_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            card_view:layout_constraintLeft_toRightOf="@+id/tv_vcode_2"
+            card_view:layout_constraintTop_toTopOf="@+id/tv_vcode_2"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="@dimen/text_view_vertical_padding"
+            android:text="001"
+            android:textSize="@dimen/textsize_content_description" />
+
+        <TextView
+            android:id="@+id/tv_vgroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            card_view:layout_constraintLeft_toRightOf="@+id/tv_vcode"
+            card_view:layout_constraintTop_toBottomOf="@+id/tv_vcode_2"
+            android:layout_marginLeft="@dimen/text_view_horizontal_padding"
+            android:layout_marginTop="@dimen/text_view_vertical_padding"
+            android:text="Vehicule group:"
+            android:textSize="@dimen/textsize_content_description"
+            android:layout_marginStart="@dimen/text_view_horizontal_padding" />
+
+        <TextView
+            android:id="@+id/tv_vgroup_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            card_view:layout_constraintLeft_toRightOf="@+id/tv_vgroup"
+            card_view:layout_constraintTop_toTopOf="@+id/tv_vgroup"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="@dimen/text_view_vertical_padding"
+            android:text="Transloyola"
             android:textSize="@dimen/textsize_content_description" />
 
 
