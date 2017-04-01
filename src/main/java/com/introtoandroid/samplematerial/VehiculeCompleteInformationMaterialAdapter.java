@@ -19,13 +19,13 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class VehiculeBasicInformationMaterialAdapter extends RecyclerView.Adapter<VehiculeBasicInformationMaterialAdapter.ViewHolder> {
+public class VehiculeCompleteInformationMaterialAdapter extends RecyclerView.Adapter<VehiculeCompleteInformationMaterialAdapter.ViewHolder> {
     private static final String DEBUG_TAG = "SampleMaterialAdapter";
 
     public Context context;
-    public ArrayList<CardBTKVehiculeBasicInfo> cardsList;
+    public ArrayList<CardBTKVehiculeCompleteInfo> cardsList;
 
-    public VehiculeBasicInformationMaterialAdapter(Context context, ArrayList<CardBTKVehiculeBasicInfo> cardsList) {
+    public VehiculeCompleteInformationMaterialAdapter(Context context, ArrayList<CardBTKVehiculeCompleteInfo> cardsList) {
         this.context = context;
         this.cardsList = cardsList;
     }
@@ -37,28 +37,21 @@ public class VehiculeBasicInformationMaterialAdapter extends RecyclerView.Adapte
      */
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
-        //las siguientes dos lineas sobran
-        //String name = cardsList.get(position).getName();
-        //int color = cardsList.get(position).getColorResource();
 
         //Se obtienen los datos del elemento position de la CardList
         String vehiculeCode = cardsList.get(position).getVehiculeCode();
         String vehiculeName = cardsList.get(position).getVehiculeName();
         String vehiculeRegNumber = cardsList.get(position).getVehiculeRegNumber();
         String vehiculeType = cardsList.get(position).getVehiculeType();
+        String vehiculeGroup = cardsList.get(position).getVehiculeGroup();
         int color_resource = cardsList.get(position).getColorResource();
 
-
         //Aquí ha surgido un problema y se ha tenido que cambiar tv_code y tv_name
-        TextView codeTextView = viewHolder.tv_vcode;
+        TextView initial = viewHolder.tv_vcode;
         TextView nameTextView = viewHolder.tv_vname;
-        TextView regNumberTextView = viewHolder.tv_vregname;
-        TextView typeTextView = viewHolder.tv_vtype;
-
-        nameTextView.setText(vehiculeName);
-        codeTextView.setText(vehiculeCode);
-        regNumberTextView.setText(vehiculeRegNumber);
-        typeTextView.setText(vehiculeType);
+        nameTextView.setText(vehiculeCode);
+        initial.setBackgroundColor(color_resource);
+        initial.setText(Character.toString(vehiculeName.charAt(0)));
     }
 
     @Override
@@ -111,14 +104,15 @@ public class VehiculeBasicInformationMaterialAdapter extends RecyclerView.Adapte
 
     //Se implementa el método añadir. En principio no es necesario para la aplicación
     public void addCard(String vehiculeCode, String vehiculeName, String vehiculeRegNumber,
-                        String vehiculeType, int color_resource) {
+                        String vehiculeType, String vehiculeGroup, int color_resource) {
 
-        CardBTKVehiculeBasicInfo card = new CardBTKVehiculeBasicInfo();
+        CardBTKVehiculeCompleteInfo card = new CardBTKVehiculeCompleteInfo();
 
         card.setVehiculeCode(vehiculeCode);
         card.setVehiculeName(vehiculeName);
         card.setVehiculeRegNumber(vehiculeRegNumber);
         card.setVehiculeType(vehiculeType);
+        card.setVehiculeGroup(vehiculeGroup);
         card.setColorResource(color_resource);
         card.setId(getItemCount());
 
@@ -158,7 +152,7 @@ public class VehiculeBasicInformationMaterialAdapter extends RecyclerView.Adapte
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         LayoutInflater li = LayoutInflater.from(viewGroup.getContext());
-        View v = li.inflate(R.layout.cvh_vehicule_basic_info, viewGroup, false);
+        View v = li.inflate(R.layout.cvh_vehicule_complete_info, viewGroup, false);
         return new ViewHolder(v);
     }
 
@@ -168,8 +162,12 @@ public class VehiculeBasicInformationMaterialAdapter extends RecyclerView.Adapte
         //Tenemos que declarar todos los elementos que habrán en el layout que vamos a utilizar
         private TextView tv_vcode;
         private TextView tv_vname;
-        private TextView tv_vregname;
-        private TextView tv_vtype;
+        private TextView tv_vregname_content;
+        private TextView tv_vtype_content;
+        private TextView tv_vgroup;
+        private TextView tv_vname_2_content;
+        private TextView tv_vcode_2_content;
+        private TextView tv_vgroup_content;
 
 
         public ViewHolder(View v) {
@@ -178,8 +176,12 @@ public class VehiculeBasicInformationMaterialAdapter extends RecyclerView.Adapte
             //Asociamos a las variables declaradas los recursos layout de la vista correspondiente
             tv_vcode = (TextView) v.findViewById(R.id.tv_vcode);
             tv_vname = (TextView) v.findViewById(R.id.tv_vname);
-            tv_vregname = (TextView) v.findViewById(R.id.tv_vregname);
-            tv_vtype = (TextView) v.findViewById(R.id.tv_vtype);
+            tv_vregname_content = (TextView) v.findViewById(R.id.tv_vregname_content);
+            tv_vtype_content = (TextView) v.findViewById(R.id.tv_vtype_content);
+            tv_vname_2_content = (TextView) v.findViewById(R.id.tv_vname_2_content);
+            tv_vcode_2_content = (TextView) v.findViewById(R.id.tv_vcode_2_content);
+            tv_vgroup_content = (TextView) v.findViewById(R.id.tv_vgroup_content);
+
 
             //deleteButton.setOnClickListener(new View.OnClickListener() {
                 //@Override
@@ -191,11 +193,15 @@ public class VehiculeBasicInformationMaterialAdapter extends RecyclerView.Adapte
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    //borrar estas tres lineas
+                    //Pair<View, String> p1 = Pair.create((View) initial, Main.TRANSITION_INITIAL);
+                    //Pair<View, String> p2 = Pair.create((View) name, Main.TRANSITION_NAME);
+                    //Pair<View, String> p3 = Pair.create((View) deleteButton, Main.TRANSITION_DELETE_BUTTON);
 
                     //Averiguar qué es esto
                     Pair<View, String> p11 = Pair.create((View) tv_vcode, Main.TRANSITION_INITIAL);
                     Pair<View, String> p12 = Pair.create((View) tv_vname, Main.TRANSITION_NAME);
-                    Pair<View, String> p13 = Pair.create((View) tv_vregname, Main.TRANSITION_DELETE_BUTTON);
+                    Pair<View, String> p13 = Pair.create((View) tv_vregname_content, Main.TRANSITION_DELETE_BUTTON);
 
                     ActivityOptionsCompat options;
                     Activity act = (AppCompatActivity) context;
