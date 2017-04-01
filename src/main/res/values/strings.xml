@@ -1,11 +1,39 @@
 <resources>
-    <string name="app_name">Ejemplo Material</string>
+    <string name="app_name">BTK WS</string>
     <string name="add_button">Añadir</string>
     <string name="update_button">Actualizar</string>
     <string name="delete_button">borrar</string>
     <string name="fab">Añadir Amigo</string>
     <string name="title_activity_transition_edit">Editar Nombre Activity</string>
     <string name="title_activity_transition_add">Añadir Nombre Activity</string>
+
+    <!-- AUTHENTICATION PROCESS CONSTANTS ************************************************ BEGIN -->
+    <string name="company_code">1</string>
+    <string name="company_group_code">1</string>
+    <string name="password">prueba_busmatick</string>
+
+    <string name="server_OK_RESP">0 - Todo correcto</string>
+    <string name="server_NOK_RESP">1000 - Credenciales incorrectas</string>
+    <!-- AUTHENTICATION PROCESS CONSTANTS ************************************************** END -->
+
+
+    <!-- SOAP TRANSACTIONS DEFINITIONS *************************************************** BEGIN -->
+
+    <!-- GENERAL -->
+    <string name="myNAMESPACE">http://tempuri.org/</string>
+    <string name="myURL">http://www.gea.busmatick.com/GEA_ServicioWeb/WSGEA.asmx</string>
+    <string name="mySOAP_BODY_PARAM_RESLLAM">ResultadoLLamada</string>
+
+    <!-- OBTENER VEHICULOS EMPRESA -->
+    <string name="myMETHOD_NAME_OVE">ObtenerVehiculosEmpresa</string>
+    <string name="mySOAP_ACTION_OVE">http://tempuri.org/ObtenerVehiculosEmpresa</string>
+
+    <!-- OBTENER TURNOS VEHICULOS -->
+    <string name="myMETHOD_NAME_OTV">ObtenerTurnosVehiculo</string>
+    <string name="mySOAP_ACTION_OTV">http://tempuri.org/ObtenerTurnosVehiculo</string>
+    <string name="mySOAP_BODY_PARAM_CODV">CodigoVehiculo</string>
+
+    <!-- SOAP TRANSACTIONS DEFINITIONS ***************************************************** END -->
 
     <string-array name="names_array">
         <item>Miguel</item>
